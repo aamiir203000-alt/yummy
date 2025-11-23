@@ -1,0 +1,136 @@
+/* ===== Body Background ===== */
+body {
+  background: linear-gradient(120deg, #000000, #000000); /* gradient مطابق للموقع */
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===== Side Nav ===== */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #111;
+  padding-top: 60px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.side-nav.show {
+  transform: translateX(0);
+}
+
+.side-nav ul li {
+  margin-bottom: 15px;
+}
+
+.side-nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.side-nav ul li a i {
+  min-width: 25px;
+  font-size: 1.2rem;
+}
+
+/* Slide in text */
+.side-nav ul li a span {
+  display: inline-block;
+  transform: translateX(-150%);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  white-space: nowrap;
+}
+
+/* Hover effects */
+.side-nav ul li a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+.side-nav ul li a:hover span {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+}
+
+.main-content.shift {
+  margin-left: 250px;
+}
+
+/* ===== Meal Cards ===== */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ===== Inputs ===== */
+input[type="text"], input[type="email"], input[type="password"] {
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  border-color: #333;
+  outline: none;
+}
+
+input:invalid {
+  border-color: red;
+}
+
+input:valid {
+  border-color: green;
+}
+
+/* ===== Buttons ===== */
+button {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
